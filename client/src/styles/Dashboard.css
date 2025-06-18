@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  height: 100%;
+}
+
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+/* ================== DASHBOARD LAYOUT ================== */
+
+.dashboard-container {
+  padding-top: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+body.light-theme .dashboard-container {
+  background-color: #f5f5f5;
+}
+
+.dashboard-content {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  padding: 40px 60px;
+  border-radius: 30px;
+  width: 80%;
+  max-width: 1200px;
+  color: #fff;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  transform: scale(0.95);
+  animation: popUp 0.8s ease forwards;
+  transition: background-color 0.3s ease;
+}
+
+body.light-theme .dashboard-content {
+  background: rgba(255, 255, 255, 0.85);
+  color: black;
+}
+
+.dashboard-content h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+body.light-theme .dashboard-content h1 {
+  color: black;
+}
+
+.highlight {
+  color: #00ffc3;
+}
+
+body.light-theme .highlight {
+  color: #00bfa6;
+}
+
+.stats-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+body.light-theme .stat-card {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: black;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+}
+
+.stat-card h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: #00ffc3;
+}
+
+body.light-theme .stat-card h2 {
+  color: #00b386;
+}
+
+.dashboard-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+body.light-theme .dashboard-content h3 {
+  color: #222;
+}
+
+.dashboard-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+body.light-theme .dashboard-content h4 {
+  color: #333;
+}
+
+/* ============= RECENTLY VIEWED ============= */
+
+.recently-viewed {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.recent-card {
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  font-weight: 500;
+  transition: transform 0.2s, background-color 0.3s;
+  cursor: pointer;
+  color: white;
+}
+
+body.light-theme .recent-card {
+  background: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.recent-card:hover {
+  transform: scale(1.05);
+  background-color: #00ffc3;
+  color: #121212;
+}
+
+body.light-theme .recent-card:hover {
+  background-color: #00ffc3;
+  color: black;
+}
+
+/* ============= CLEAR HISTORY BUTTON ============= */
+
+.clear-btn {
+  background-color: transparent;
+  border: 1.5px solid #00ffc3;
+  color: #00ffc3;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.clear-btn:hover {
+  background-color: #00ffc3;
+  color: #121212;
+  transform: scale(1.05);
+}
+
+body.light-theme .clear-btn {
+  color: #00bfa6;
+  border-color: #00bfa6;
+}
+
+body.light-theme .clear-btn:hover {
+  background-color: #00bfa6;
+  color: white;
+}
+
+/* ============= ANIMATION ============= */
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
