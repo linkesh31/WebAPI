@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const FavoriteAnime = require('../models/FavoriteAnime');
 const FavoriteGame = require('../models/FavoriteGame');
-const FavoriteTrack = require('../models/FavoriteTrack'); // ADD THIS
+const FavoriteTrack = require('../models/FavoriteTrack');
 const RecentAnime = require('../models/RecentAnime');
 const RecentGame = require('../models/RecentGame');
 const auth = require('../middleware/auth');
@@ -16,14 +16,14 @@ router.get('/', auth, async (req, res) => {
 
     const animeCount = await FavoriteAnime.countDocuments({ userId: req.userId });
     const gameCount = await FavoriteGame.countDocuments({ userId: req.userId });
-    const musicCount = await FavoriteTrack.countDocuments({ userId: req.userId }); // ADD THIS
+    const musicCount = await FavoriteTrack.countDocuments({ userId: req.userId }); 
 
     res.json({
       user,
       favorites: {
         anime: animeCount,
         games: gameCount,
-        music: musicCount // ADD THIS
+        music: musicCount 
       }
     });
   } catch (err) {
@@ -69,7 +69,7 @@ router.delete('/delete', auth, async (req, res) => {
   try {
     await FavoriteAnime.deleteMany({ userId: req.userId });
     await FavoriteGame.deleteMany({ userId: req.userId });
-    await FavoriteTrack.deleteMany({ userId: req.userId }); // ADD THIS
+    await FavoriteTrack.deleteMany({ userId: req.userId }); 
     await RecentAnime.deleteMany({ userId: req.userId });
     await RecentGame.deleteMany({ userId: req.userId });
     await User.findByIdAndDelete(req.userId);

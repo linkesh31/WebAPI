@@ -1,36 +1,44 @@
-const express = require('express'); // Importing Express framework
-const router = express.Router(); // Creating a new router instance
-const bcrypt = require('bcryptjs'); // Importing bcrypt for password hashing
-const jwt = require('jsonwebtoken'); // Importing jsonwebtoken for token generation
-const User = require('../models/user'); // Importing the User model
-const generateOTP = require('../utils/otpGenerator'); // Importing OTP generator utility
-const sendOTP = require('../utils/mailer'); // Importing mailer utility for sending emails
+// Importing required modules
+const express = require('express');                    // Express for routing
+const router = express.Router();                       // Create a new Express Router
+const bcrypt = require('bcryptjs');                    // For hashing passwords securely
+const jwt = require('jsonwebtoken');                   // For generating and verifying JWT tokens
+const User = require('../models/user');                // User model for MongoDB
+const generateOTP = require('../utils/otpGenerator');  // Function to generate 6-digit OTP
+const sendOTP = require('../utils/mailer');            // Function to send OTP email
 
-// SIGNUP WITH OTP + SAFEGUARD (Allow re-register if unverified)
+// ===============================
+// SIGN UP - WITH OTP VERIFICATION
+// ===============================
 router.post('/signup', async (req, res) => {
-  const { email, username, password } = req.body;
+  const { email, username, password } = req.body; // Extract user details
 
   try {
+    // Check if user with this email already exists
     const existing = await User.findOne({ email });
 
-    // Check if the email already exists and is verified
+    // If user exists and is already verified, block registration
     if (existing && existing.isVerified) {
       return res.status(400).json({ message: "Email already exists" });
     }
 
-    // If an unverified user exists, delete the previous unverified record
+    // If user exists but is not verified, allow re-register by deleting old record
     if (existing && !existing.isVerified) {
       await User.deleteOne({ email });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10); // Hashing the password
-    const otp = generateOTP(); // Generating OTP
+    // Hash the password before saving
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Try sending OTP first before saving user
+    // Generate a new OTP for email verification
+    const otp = generateOTP();
+
     try {
-      await sendOTP(email, otp); // Sending OTP to the user's email
+      // Send OTP to user's email first (ensure email is valid)
+      await sendOTP(email, otp);
 
-      const newUser  = new User({
+      // Create new user with hashed password and OTP
+      const newUser = new User({
         email,
         username,
         password: hashedPassword,
@@ -38,32 +46,39 @@ router.post('/signup', async (req, res) => {
         isVerified: false
       });
 
-      await newUser .save(); // Saving the new user to the database
+      // Save user to database
+      await newUser.save();
 
+      // Send success response
       res.status(200).json({ message: "OTP sent to email. Please verify your account." });
 
     } catch (emailError) {
+      // If email fails to send, show error
       console.error("Failed to send OTP email:", emailError);
       res.status(500).json({ message: "Failed to send OTP email. Please try again." });
     }
 
   } catch (err) {
+    // Any database or server error
     res.status(500).json({ message: "Signup failed", error: err.message });
   }
 });
 
-// OTP VERIFICATION (for signup)
+// ===========================================
+// VERIFY OTP AFTER SIGNUP (EMAIL VERIFICATION)
+// ===========================================
 router.post('/verify-otp', async (req, res) => {
   const { email, otp } = req.body;
 
   try {
     const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: "User  not found" });
+    if (!user) return res.status(404).json({ message: "User not found" });
 
+    // If OTP matches, verify account and clear OTP
     if (user.otp === otp) {
-      user.isVerified = true; // Marking the user as verified
-      user.otp = null; // Clearing the OTP
-      await user.save(); // Saving the updated user
+      user.isVerified = true;
+      user.otp = null;
+      await user.save();
       res.status(200).json({ message: "Email verified successfully" });
     } else {
       res.status(400).json({ message: "Invalid OTP" });
@@ -73,24 +88,31 @@ router.post('/verify-otp', async (req, res) => {
   }
 });
 
-// LOGIN (only if email verified)
+// =====================
+// LOGIN (WITH JWT TOKEN)
+// =====================
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
     const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: "User  not found" });
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    // Prevent login if user has not verified email
     if (!user.isVerified) return res.status(401).json({ message: "Please verify your email first" });
 
-    const isMatch = await bcrypt.compare(password, user.password); // Comparing passwords
+    // Compare password with stored hash
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(401).json({ message: "Invalid credentials" });
 
+    // Generate JWT token valid for 2 hours
     const token = jwt.sign(
       { userId: user._id.toString(), username: user.username },
-      process.env.JWT_SECRET, // Secret key for signing the token
-      { expiresIn: '2h' } // Token expiration time
+      process.env.JWT_SECRET,
+      { expiresIn: '2h' }
     );
 
+    // Return token and user info
     res.status(200).json({
       token,
       user: {
@@ -98,25 +120,29 @@ router.post('/login', async (req, res) => {
         username: user.username
       }
     });
+
   } catch (err) {
     res.status(500).json({ message: "Login failed", error: err.message });
   }
 });
 
-// REQUEST OTP FOR PASSWORD RESET
+// ===================================
+// REQUEST OTP FOR PASSWORD RESET FLOW
+// ===================================
 router.post('/request-reset', async (req, res) => {
   const { email } = req.body;
 
   try {
     const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: 'User  not found' });
+    if (!user) return res.status(404).json({ message: 'User not found' });
 
-    const otp = generateOTP(); // Generating OTP for password reset
-    user.otp = otp; // Setting the OTP for the user
+    // Generate new OTP
+    const otp = generateOTP();
+    user.otp = otp;
 
     try {
-      await sendOTP(email, otp); // Sending OTP to the user's email
-      await user.save(); // Saving the updated user
+      await sendOTP(email, otp); // Send OTP to email
+      await user.save();         // Save updated user
       res.status(200).json({ message: 'OTP sent for password reset' });
     } catch (emailError) {
       console.error("Failed to send reset OTP:", emailError);
@@ -128,41 +154,52 @@ router.post('/request-reset', async (req, res) => {
   }
 });
 
-// VERIFY OTP FOR PASSWORD RESET
+// =======================================
+// VERIFY OTP DURING PASSWORD RESET FLOW
+// =======================================
 router.post('/verify-reset-otp', async (req, res) => {
   const { email, otp } = req.body;
 
   try {
     const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: 'User  not found' });
+    if (!user) return res.status(404).json({ message: 'User not found' });
 
+    // Match OTP
     if (user.otp === otp) {
       res.status(200).json({ message: 'OTP matched' });
     } else {
       res.status(400).json({ message: 'Invalid OTP' });
     }
+
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
 
-// PASSWORD RESET
+// ==========================
+// RESET PASSWORD AFTER OTP
+// ==========================
 router.post('/reset-password', async (req, res) => {
   const { email, newPassword } = req.body;
 
   try {
     const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: 'User  not found' });
+    if (!user) return res.status(404).json({ message: 'User not found' });
 
-    const hashedPassword = await bcrypt.hash(newPassword, 10); // Hashing the new password
-    user.password = hashedPassword; // Updating the user's password
-    user.otp = null; // Clearing the OTP
-    await user.save(); // Saving the updated user
+    // Hash and update password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+    user.otp = null; // Clear OTP
+    await user.save();
 
     res.status(200).json({ message: 'Password reset successful' });
+
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
 
-module.exports = router; // Exporting the router
+// ==================
+// EXPORT ROUTER FILE
+// ==================
+module.exports = router;

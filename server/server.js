@@ -21,15 +21,14 @@ const authRoutes = require('./routes/auth');
 const favoriteRoutes = require('./routes/favorites');
 const otpRoutes = require('./routes/otp');
 const recentRoutes = require('./routes/recent');
-const profileRoutes = require('./routes/profile');  // ✅ included profile
-
+const profileRoutes = require('./routes/profile');  
 // Route Mounting
 app.use('/api/auth', authRoutes);
 app.use('/api/favorites', favoriteRoutes);
 app.use('/api/otp', otpRoutes);
 app.use('/api/recent', recentRoutes);
 app.use('/api/profile', profileRoutes); 
-// 🔥 Removed: app.use('/api/music', musicRoutes);
+
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI, {

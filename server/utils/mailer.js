@@ -3,15 +3,15 @@ require('dotenv').config();
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
-  port: 587,        // ✅ safer port
-  secure: false,    // ✅ TLS (not SSL)
+  port: 587,        //  safer port
+  secure: false,    //  TLS 
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
 });
 
-// Verify transporter (optional but good for debugging)
+// Verify transporter 
 transporter.verify((error, success) => {
   if (error) {
     console.error('❌ Email transporter failed to connect:', error);
