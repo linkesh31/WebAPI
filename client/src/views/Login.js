@@ -75,7 +75,8 @@ export default function Login() {
             <Link to="/forgot-password" className="link-button"> {/* Link to forgot password page */}
               Forgot Password?
             </Link>
-            <a href="/signup">Sign Up</a> {/* Link to sign up page */}
+            <Link to="/signup" className="link-button">Sign Up</Link>
+                                                                         {/* Link to sign up page */}
           </div>
           <button type="submit" className="login-btn">Login</button> {/* Button to submit the form */}
         </form>
