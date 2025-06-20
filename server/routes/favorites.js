@@ -6,7 +6,7 @@ const auth = require('../middleware/auth');
 
 const FavoriteAnime = require('../models/FavoriteAnime');
 const FavoriteGame = require('../models/FavoriteGame');
-const FavoriteTrack = require('../models/FavoriteTrack'); // ✅ Music
+const FavoriteTrack = require('../models/FavoriteTrack'); // Music
 
 // ===================== ANIME ROUTES =====================
 

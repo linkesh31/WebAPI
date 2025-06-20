@@ -1,208 +1,208 @@
 .games-page {
-  padding: 2rem;
-  background-color: #111;
-  color: white;
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  margin-top: 65px; /* adjust based on navbar height */
+  padding: 2rem; /* Padding for the games page */
+  background-color: #111; /* Background color */
+  color: white; /* Text color */
+  min-height: 100vh; /* Minimum height to fill the viewport */
+  font-family: 'Poppins', sans-serif; /* Font family */
+  margin-top: 65px; /* Adjust based on navbar height */
 }
 
 .games-page h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #00ffc3;
+  text-align: center; /* Center align the heading */
+  font-size: 2rem; /* Font size for heading */
+  margin-bottom: 1.5rem; /* Margin below heading */
+  color: #00ffc3; /* Heading color */
 }
 
 /* === HERO SECTION === */
 .game-hero {
-  display: flex;
-  background-color: #1a1a1a;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 3rem;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  display: flex; /* Flexbox layout for hero section */
+  background-color: #1a1a1a; /* Background color */
+  border-radius: 20px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  margin-bottom: 3rem; /* Margin below hero section */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); /* Shadow effect */
 }
 
 .game-hero img {
-  width: 50%;
-  object-fit: cover;
-  height: auto;
-  display: block;
+  width: 50%; /* Image width */
+  object-fit: cover; /* Cover the area */
+  height: auto; /* Auto height */
+  display: block; /* Block display */
 }
 
 .game-hero-content {
-  flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #1a1a1a;
+  flex: 1; /* Flex-grow */
+  padding: 2rem; /* Padding inside hero content */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Column layout */
+  justify-content: center; /* Center items vertically */
+  background-color: #1a1a1a; /* Background color */
 }
 
 .game-hero-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #fff;
+  font-size: 2rem; /* Font size for subheading */
+  margin-bottom: 1rem; /* Margin below subheading */
+  color: #fff; /* Text color */
 }
 
 .game-hero-content p {
-  font-size: 1rem;
-  margin: 0.3rem 0;
-  color: #ccc;
-  display: flex;
-  align-items: center;
+  font-size: 1rem; /* Font size for paragraph */
+  margin: 0.3rem 0; /* Margin for paragraph */
+  color: #ccc; /* Text color */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items vertically */
 }
 
 .hero-buttons {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1rem;
+  margin-top: 1.5rem; /* Margin above buttons */
+  display: flex; /* Flexbox layout */
+  gap: 1rem; /* Space between buttons */
 }
 
 .hero-buttons .btn {
-  padding: 0.6rem 1.2rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  padding: 0.6rem 1.2rem; /* Padding for buttons */
+  font-weight: 600; /* Bold font weight */
+  font-size: 0.95rem; /* Font size for buttons */
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items vertically */
+  gap: 0.5rem; /* Space between icon and text */
 }
 
 .btn.visit {
-  background: linear-gradient(to right, #00ffc3, #3c90ff);
-  color: black;
+  background: linear-gradient(to right, #00ffc3, #3c90ff); /* Gradient background for visit button */
+  color: black; /* Text color */
 }
 
 .btn.favorite {
-  background: #8e2de2;
-  color: white;
+  background: #8e2de2; /* Background color for favorite button */
+  color: white; /* Text color */
 }
 
 /* === FILTER BAR === */
 .filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  justify-content: center;
+  display: flex; /* Flexbox layout for filters */
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 1rem; /* Space between filters */
+  margin-bottom: 2rem; /* Margin below filters */
+  justify-content: center; /* Center filters */
 }
 
 .filters input,
 .filters select {
-  padding: 0.7rem 1rem;
-  font-size: 1rem;
-  border-radius: 10px;
-  border: none;
-  background-color: #222;
-  color: white;
+  padding: 0.7rem 1rem; /* Padding for inputs and selects */
+  font-size: 1rem; /* Font size */
+  border-radius: 10px; /* Rounded corners */
+  border: none; /* No border */
+  background-color: #222; /* Background color */
+  color: white; /* Text color */
 }
 
 .clear-btn {
-  background: #ff3b3b;
-  color: white;
-  padding: 0.7rem 1.2rem;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
+  background: #ff3b3b; /* Background color for clear button */
+  color: white; /* Text color */
+  padding: 0.7rem 1.2rem; /* Padding for clear button */
+  border-radius: 10px; /* Rounded corners */
+  font-weight: 600; /* Bold font weight */
+  cursor: pointer; /* Pointer cursor on hover */
+  border: none; /* No border */
 }
 
 .clear-btn:hover {
-  background: #c93030;
+  background: #c93030; /* Background color on hover */
 }
 
 /* === GAME GRID === */
 .games-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  display: grid; /* Grid layout for games */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 1.5rem; /* Space between game cards */
 }
 
 .game-card {
-  background-color: #1f1f1f;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
-  text-align: center;
-  color: white;
+  background-color: #1f1f1f; /* Background color for game card */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Shadow effect */
+  transition: transform 0.3s ease; /* Transition effect */
+  text-align: center; /* Center text */
+  color: white; /* Text color */
 }
 
 .game-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.03); /* Scale effect on hover */
 }
 
 .game-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+  width: 100%; /* Full width for images */
+  height: 250px; /* Fixed height for images */
+  object-fit: cover; /* Cover the area */
 }
 
 .game-card h3 {
-  font-size: 1.1rem;
-  margin: 0.8rem 0 0.3rem;
-  color: white;
+  font-size: 1.1rem; /* Font size for game title */
+  margin: 0.8rem 0 0.3rem; /* Margin for game title */
+  color: white; /* Text color */
 }
 
 .game-card p {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin: 0.2rem 0;
+  font-size: 0.9rem; /* Font size for game description */
+  color: #ccc; /* Text color */
+  margin: 0.2rem 0; /* Margin for game description */
 }
 
 .game-card .rating {
-  color: gold;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+  color: gold; /* Color for rating */
+  font-size: 0.95rem; /* Font size for rating */
+  margin-bottom: 0.5rem; /* Margin below rating */
 }
 
 .card-buttons {
-  margin: 1rem 0;
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
+  margin: 1rem 0; /* Margin for card buttons */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center buttons */
+  gap: 0.5rem; /* Space between buttons */
 }
 
 .card-buttons button {
-  padding: 0.5rem 0.9rem;
-  font-size: 0.85rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s ease;
+  padding: 0.5rem 0.9rem; /* Padding for buttons */
+  font-size: 0.85rem; /* Font size for buttons */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  font-weight: 600; /* Bold font weight */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: 0.2s ease; /* Transition effect */
 }
 
 .card-buttons .visit {
-  background: #3498db;
-  color: white;
+  background: #3498db; /* Background color for visit button */
+  color: white; /* Text color */
 }
 
 .card-buttons .favorite {
-  background: #8e44ad;
-  color: white;
+  background: #8e44ad; /* Background color for favorite button */
+  color: white; /* Text color */
 }
 
 .card-buttons .saved {
-  background: #555;
-  color: white;
-  cursor: not-allowed;
+  background: #555; /* Background color for saved button */
+  color: white; /* Text color */
+  cursor: not-allowed; /* Not allowed cursor */
 }
 
 /* === LIGHT MODE === */
 body.light-theme .games-page {
-  background-color: #f5f5f5;
-  color: black;
+  background-color: #f5f5f5; /* Light theme background color */
+  color: black; /* Light theme text color */
 }
 
 body.light-theme .game-hero-content,
 body.light-theme .game-card {
-  background-color: #fff;
-  color: black;
+  background-color: #fff; /* Light theme background for hero content and game card */
+  color: black; /* Light theme text color */
 }
 
 body.light-theme .game-hero-content h2,
@@ -210,11 +210,10 @@ body.light-theme .game-hero-content p,
 body.light-theme .game-card h3,
 body.light-theme .game-card p,
 body.light-theme .game-card .rating {
-  color: #111 !important;
+  color: #111 !important; /* Light theme text color for headings and paragraphs */
 }
 
 body.light-theme .btn.favorite,
 body.light-theme .btn.visit {
-  color: white; /* keep button text white */
+  color: white; /* Keep button text white in light theme */
 }
-

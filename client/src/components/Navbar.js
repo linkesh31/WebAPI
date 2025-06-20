@@ -1,29 +1,33 @@
-import React, { useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ThemeContext } from '../context/ThemeContext';
+import { useContext } from 'react'; // Importing useContext hook from React
 import {
-  FaHome,
-  FaTv,
   FaGamepad,
-  FaMusic,
   FaHeart,
+  FaHome,
+  FaMusic,
+  FaTv,
   FaUser
-} from 'react-icons/fa';
+} from 'react-icons/fa'; // Importing icon components from react-icons
+import { Link, useLocation } from 'react-router-dom'; // Importing Link and useLocation from react-router-dom
+import { ThemeContext } from '../context/ThemeContext'; // Importing ThemeContext for theme management
 
 export default function Navbar() {
-  const location = useLocation();
-  const { toggleTheme, theme } = useContext(ThemeContext);
+  const location = useLocation();// Getting the current location from the router
+  const { toggleTheme, theme } = useContext(ThemeContext);// Accessing theme and toggleTheme function from ThemeContext
 
+
+ // Paths where the navbar should be hidden
   const hideNavbarPaths = ['/', '/signup', '/OTP'];
   if (hideNavbarPaths.includes(location.pathname)) {
     return null;
   }
 
+
+// Defining the navigation items with labels, paths, and icons
   const navItems = [
     { label: 'Home', path: '/dashboard', icon: <FaHome /> },
     { label: 'Anime', path: '/anime', icon: <FaTv /> },
     { label: 'Games', path: '/games', icon: <FaGamepad /> },
-    { label: 'Music', path: '/music', icon: <FaMusic /> }, // ✅ Music tab
+    { label: 'Music', path: '/music', icon: <FaMusic /> }, //
     { label: 'Favorites', path: '/favorites', icon: <FaHeart /> },
     { label: 'Profile', path: '/profile', icon: <FaUser /> }
   ];
@@ -31,13 +35,13 @@ export default function Navbar() {
   return (
     <nav style={{
       ...styles.navbar,
-      backgroundColor: theme === 'light' ? '#ffffff' : '#111',
-      color: theme === 'light' ? '#111' : '#fff'
+      backgroundColor: theme === 'light' ? '#ffffff' : '#111',// Setting background color based on theme
+      color: theme === 'light' ? '#111' : '#fff'// Setting text color based on theme
     }}>
       <div style={styles.left}>
         <Link to="/" style={{
           ...styles.logo,
-          color: theme === 'light' ? '#111' : '#fff'
+          color: theme === 'light' ? '#111' : '#fff'// Setting logo color based on theme
         }}>
           SenpaiStats
         </Link>
@@ -45,7 +49,7 @@ export default function Navbar() {
 
       <div style={styles.right}>
         {navItems
-          .filter(item => item.path !== location.pathname)
+          .filter(item => item.path !== location.pathname)// Filtering out the current path from nav items
           .map(item => (
             <Link
               key={item.path}

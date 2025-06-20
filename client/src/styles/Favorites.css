@@ -1,206 +1,203 @@
 /* === SHARED === */
 
 .favorites-container {
-  padding: 100px 2rem 3rem 2rem;
-  min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 100px 2rem 3rem 2rem; /* Padding for the favorites container */
+  min-height: 100vh; /* Minimum height to fill the viewport */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
 }
 
 .favorites-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-size: 2rem; /* Font size for the title */
+  font-weight: 600; /* Font weight for the title */
+  margin-bottom: 1.5rem; /* Margin below the title */
+  font-family: 'Cal Sans', sans-serif; /* Font family */
 }
 
 .tab-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  display: flex; /* Flexbox layout for tab buttons */
+  gap: 1rem; /* Space between buttons */
+  margin-bottom: 2.5rem; /* Margin below tab buttons */
 }
 
 .tab-buttons button {
-  padding: 0.6rem 1.4rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  padding: 0.6rem 1.4rem; /* Padding for buttons */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  font-weight: 600; /* Bold font weight */
+  font-size: 0.95rem; /* Font size */
+  font-family: 'Cal Sans', sans-serif; /* Font family */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.2s ease; /* Transition effect */
 }
 
 .tab-buttons button.active {
-  color: white;
+  color: white; /* Text color for active button */
 }
 
 .favorites-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 2rem;
+  display: grid; /* Grid layout for favorites */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Responsive columns */
+  gap: 2rem; /* Space between cards */
 }
 
 .fav-card {
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 1.2rem; /* Padding inside the card */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Column layout */
+  align-items: center; /* Center items */
+  transition: transform 0.2s ease, background-color 0.3s ease; /* Transition effects */
+  position: relative; /* Relative positioning */
+  font-family: 'Cal Sans', sans-serif; /* Font family */
 }
 
 .fav-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px); /* Lift effect on hover */
 }
 
 .fav-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  width: 100%; /* Full width for images */
+  height: 250px; /* Fixed height for images */
+  object-fit: cover; /* Cover the area */
+  border-radius: 12px; /* Rounded corners */
+  margin-bottom: 1rem; /* Margin below image */
 }
 
 .fav-card h3 {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-  text-align: center;
-  font-weight: 600;
+  font-size: 1.05rem; /* Font size for card title */
+  margin: 0.5rem 0; /* Margin for title */
+  text-align: center; /* Center text */
+  font-weight: 700; /* Bold font weight */
 }
 
 .fav-card p {
-  font-size: 0.9rem;
-  margin: 0.2rem 0 0.8rem 0;
-  text-align: center;
+  font-size: 0.9rem; /* Font size for card description */
+  margin: 0.2rem 0 0.8rem 0; /* Margin for description */
+  text-align: center; /* Center text */
+  font-weight: 500; /* Medium font weight */
 }
 
 .visit-btn {
-  text-decoration: none;
-  padding: 0.5rem 1.2rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease;
+  text-decoration: none; /* No underline */
+  padding: 0.55rem 1.3rem; /* Padding for visit button */
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  font-weight: 600; /* Bold font weight */
+  font-size: 0.9rem; /* Font size */
+  transition: background-color 0.2s ease; /* Transition effect */
+  font-family: 'Cal Sans', sans-serif; /* Font family */
+  background-color: #00ffc3; /* Background color */
+  color: black; /* Text color */
+}
+
+.visit-btn:hover {
+  background-color: #00cc9a; /* Background color on hover */
 }
 
 .remove-btn {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 16px;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-  transition: background-color 0.2s ease;
+  position: absolute; /* Absolute positioning for remove button */
+  top: 10px; /* Align to the top */
+  right: 12px; /* Align to the right */
+  font-size: 16px; /* Font size */
+  border-radius: 50%; /* Circular shape */
+  width: 28px; /* Fixed width */
+  height: 28px; /* Fixed height */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  z-index: 2; /* Above other elements */
+  transition: background-color 0.2s ease; /* Transition effect */
 }
 
+/* === AUDIO ALIGN FIX === */
+.fav-card audio {
+  margin-top: auto; /* Push audio player to the bottom */
+  width: 100%; /* Full width */
+}
 
 /* === LIGHT THEME === */
 
 body.light-theme .favorites-container {
-  background-color: #f5f5f5;
-  color: #222;
+  background-color: #f5f5f5; /* Light theme background color */
+  color: #222; /* Light theme text color */
 }
 
 body.light-theme .favorites-title {
-  color: #222;
+  color: #222; /* Light theme title color */
 }
 
 body.light-theme .tab-buttons button {
-  background-color: #e0e0e0;
-  color: #222;
+  background-color: #e0e0e0; /* Light theme button background */
+  color: #222; /* Light theme button text color */
 }
 
 body.light-theme .tab-buttons button.active {
-  background-color: #000;
-  color: #fff;
+  background-color: #00ffc3; /* Active button background in light theme */
+  color: #000; /* Active button text color in light theme */
 }
 
 body.light-theme .fav-card {
-  background-color: #fff;
+  background-color: #fff; /* Light theme card background */
 }
 
 body.light-theme .fav-card h3 {
-  color: #333;
+  color: #222; /* Light theme card title color */
 }
 
 body.light-theme .fav-card p {
-  color: #777;
-}
-
-body.light-theme .visit-btn {
-  background-color: #2979ff;
-  color: white;
-}
-
-body.light-theme .visit-btn:hover {
-  background-color: #1565c0;
+  color: #444; /* Light theme card description color */
 }
 
 body.light-theme .remove-btn {
-  background-color: rgba(30, 30, 30, 0.85);
-  color: white;
+  background-color: #333; /* Light theme remove button background */
+  color: white; /* Light theme remove button text color */
 }
 
 body.light-theme .remove-btn:hover {
-  background-color: #e53935;
+  background-color: #e53935; /* Light theme remove button hover color */
 }
-
 
 /* === DARK THEME === */
 
 body:not(.light-theme) .favorites-container {
-  background-color: #111;
-  color: #f5f5f5;
+  background-color: #111; /* Dark theme background color */
+  color: #f5f5f5; /* Dark theme text color */
 }
 
 body:not(.light-theme) .favorites-title {
-  color: white;
+  color: white; /* Dark theme title color */
 }
 
 body:not(.light-theme) .tab-buttons button {
-  background-color: #333;
-  color: #ddd;
+  background-color: #333; /* Dark theme button background */
+  color: #ddd; /* Dark theme button text color */
 }
 
 body:not(.light-theme) .tab-buttons button.active {
-  background-color: #00ffc3;
-  color: #000;
+  background-color: #00ffc3; /* Active button background in dark theme */
+  color: #000; /* Active button text color in dark theme */
 }
 
 body:not(.light-theme) .fav-card {
-  background-color: #1a1a1a;
+  background-color: #1a1a1a; /* Dark theme card background */
 }
 
 body:not(.light-theme) .fav-card h3 {
-  color: #f1f1f1;
+  color: #f1f1f1; /* Dark theme card title color */
 }
 
 body:not(.light-theme) .fav-card p {
-  color: #aaa;
-}
-
-body:not(.light-theme) .visit-btn {
-  background-color: #00aaff;
-  color: white;
-}
-
-body:not(.light-theme) .visit-btn:hover {
-  background-color: #008ecc;
+  color: #aaa; /* Dark theme card description color */
 }
 
 body:not(.light-theme) .remove-btn {
-  background-color: #333;
-  color: white;
+  background-color: #333; /* Dark theme remove button background */
+  color: white; /* Dark theme remove button text color */
 }
 
 body:not(.light-theme) .remove-btn:hover {
-  background-color: #e53935;
+  background-color: #e53935; /* Dark theme remove button hover color */
 }

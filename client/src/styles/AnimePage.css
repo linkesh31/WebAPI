@@ -1,374 +1,373 @@
-/* ✅ AnimePage.css — Finalized UI Style */
+/* AnimePage.css — Finalized UI Style */
 
 .anime-container {
-  padding: 90px 2rem 2rem 2rem;
-  background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+  padding: 90px 2rem 2rem 2rem; /* Padding for the main container */
+  background: linear-gradient(to right, #0f0f0f, #1a1a1a); /* Background gradient */
 }
 
 .hero-section {
-  position: relative;
-  width: 100%;
-  height: 450px;
-  margin-bottom: 3rem;
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  padding: 2rem;
-  background-color: transparent;
+  position: relative; /* Positioning for the hero section */
+  width: 100%; /* Full width */
+  height: 450px; /* Fixed height */
+  margin-bottom: 3rem; /* Margin below the hero section */
+  border-radius: 16px; /* Rounded corners */
+  overflow: hidden; /* Hiding overflow */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Centering items vertically */
+  padding: 2rem; /* Padding inside the hero section */
+  background-color: transparent; /* Transparent background */
 }
 
 .hero-blur-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  filter: blur(30px) brightness(0.4);
-  z-index: 0;
+  position: absolute; /* Absolute positioning for the background */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  object-fit: cover; /* Cover the area */
+  filter: blur(30px) brightness(0.4); /* Blur and dim the background */
+  z-index: 0; /* Behind other elements */
 }
 
 .hero-foreground {
-  display: flex;
-  z-index: 2;
-  width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2rem;
+  display: flex; /* Flexbox layout for foreground */
+  z-index: 2; /* Above the background */
+  width: 100%; /* Full width */
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center; /* Centering items vertically */
+  gap: 2rem; /* Space between items */
 }
 
 .hero-poster {
-  height: 90%;
-  max-height: 400px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  object-fit: cover;
+  height: 90%; /* Height of the poster */
+  max-height: 400px; /* Maximum height */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  object-fit: cover; /* Cover the area */
 }
 
 .hero-text {
-  color: white;
-  max-width: 600px;
+  color: white; /* Text color */
+  max-width: 600px; /* Maximum width */
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  color: white;
+  font-size: 2.5rem; /* Font size for main title */
+  margin: 0; /* No margin */
+  color: white; /* Text color */
 }
 
 .hero-text h2 {
-  color: white;
-  font-weight: 600;
+  color: white; /* Text color for subtitle */
+  font-weight: 600; /* Bold font weight */
 }
 
 .hero-text p {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #ddd;
-  line-height: 1.5;
+  margin-top: 1rem; /* Margin above paragraph */
+  font-size: 1rem; /* Font size */
+  color: #ddd; /* Text color */
+  line-height: 1.5; /* Line height */
 }
 
 .hero-buttons {
-  margin-top: 1.2rem;
-  display: flex;
-  gap: 1rem;
+  margin-top: 1.2rem; /* Margin above buttons */
+  display: flex; /* Flexbox layout for buttons */
+  gap: 1rem; /* Space between buttons */
 }
 
 .hero-buttons .btn {
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 0.6rem 1.5rem;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease;
-  white-space: nowrap;
-  min-width: 140px;      /* ✅ same fixed width */
-  max-width: 140px;
-  text-align: center;
+  font-size: 0.95rem; /* Font size for buttons */
+  font-weight: 600; /* Bold font weight */
+  padding: 0.6rem 1.5rem; /* Padding for buttons */
+  border-radius: 12px; /* Rounded corners */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: 0.3s ease; /* Transition effect */
+  white-space: nowrap; /* Prevent text wrapping */
+  min-width: 140px; /* Minimum width */
+  max-width: 140px; /* Maximum width */
+  text-align: center; /* Center text */
 }
 
-
 .filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  display: flex; /* Flexbox layout for filter bar */
+  flex-wrap: wrap; /* Wrap items */
+  gap: 1rem; /* Space between items */
+  margin-bottom: 2rem; /* Margin below filter bar */
 }
 
 .filter-bar input,
 .filter-bar select {
-  padding: 0.6rem;
-  border-radius: 8px;
-  border: none;
-  font-size: 0.95rem;
-  background: #1a1a1a;
-  color: white;
-  width: 200px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  padding: 0.6rem; /* Padding for inputs and selects */
+  border-radius: 8px; /* Rounded corners */
+  border: none; /* No border */
+  font-size: 0.95rem; /* Font size */
+  background: #1a1a1a; /* Background color */
+  color: white; /* Text color */
+  width: 200px; /* Fixed width */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 
 .anime-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 2rem;
-  margin-top: 1rem;
+  display: grid; /* Grid layout for anime cards */
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Responsive columns */
+  gap: 2rem; /* Space between cards */
+  margin-top: 1rem; /* Margin above grid */
 }
 
 .anime-card {
-  position: relative;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  height: 350px;
+  position: relative; /* Positioning for the card */
+  overflow: hidden; /* Hiding overflow */
+  background-color: rgba(0, 0, 0, 0.8); /* Background color */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Shadow effect */
+  transition: transform 0.3s ease; /* Transition effect */
+  cursor: pointer; /* Pointer cursor on hover */
+  height: 350px; /* Fixed height */
 }
 
 .anime-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Scale effect on hover */
 }
 
 .anime-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Cover the area */
+  border-radius: 16px; /* Rounded corners */
 }
 
 .anime-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  opacity: 0;
-  transition: 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 16px;
+  position: absolute; /* Absolute positioning for overlay */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  background: rgba(0, 0, 0, 0.9); /* Background color */
+  opacity: 0; /* Initially hidden */
+  transition: 0.3s; /* Transition effect */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Column layout */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 1rem; /* Padding inside overlay */
+  text-align: center; /* Center text */
+  border-radius: 16px; /* Rounded corners */
 }
 
 .anime-card:hover .anime-overlay {
-  opacity: 1;
+  opacity: 1; /* Show overlay on hover */
 }
 
 .anime-overlay h3 {
-  font-size: 1rem;
-  color: #fff;
-  margin-bottom: 0.5rem;
+  font-size: 1rem; /* Font size for title */
+  color: #fff; /* Text color */
+  margin-bottom: 0.5rem; /* Margin below title */
 }
 
 .anime-overlay p {
-  font-size: 0.85rem;
-  color: #ccc;
-  margin-bottom: 0.7rem;
+  font-size: 0.85rem; /* Font size for description */
+  color: #ccc; /* Text color */
+  margin-bottom: 0.7rem; /* Margin below description */
 }
 
 .button-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: flex; /* Flexbox layout for button stack */
+  flex-direction: column; /* Column layout */
+  gap: 0.5rem; /* Space between buttons */
 }
 
 .anime-btn {
-  padding: 0.5rem 0.8rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  text-decoration: none;
+  padding: 0.5rem 0.8rem; /* Padding for buttons */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  font-weight: 600; /* Bold font weight */
+  font-size: 0.85rem; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-decoration: none; /* No underline */
 }
 
 .heart-toggle {
-  background-color: black;
-  color: white;
-  border: 1px solid white;
+  background-color: black; /* Default background color */
+  color: white; /* Text color */
+  border: 1px solid white; /* Border color */
 }
 
 .heart-toggle.active {
-  background-color: crimson;
-  border: none;
-  color: white;
+  background-color: crimson; /* Active background color */
+  border: none; /* No border */
+  color: white; /* Text color */
 }
 
 .details {
-  background-color: #3498db;
-  color: white;
+  background-color: #3498db; /* Background color for details button */
+  color: white; /* Text color */
 }
 
 .anime-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+  position: fixed; /* Fixed positioning for modal */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background: rgba(0, 0, 0, 0.7); /* Background color */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  z-index: 9999; /* Above other elements */
 }
 
 .anime-modal-content {
-  background: white;
-  color: black;
-  padding: 2rem;
-  border-radius: 16px;
-  max-width: 600px;
-  width: 90%;
-  max-height: 90%;
-  overflow-y: auto;
-  position: relative;
-  animation: fadeIn 0.3s ease-in-out;
+  background: white; /* Background color for modal content */
+  color: black; /* Text color */
+  padding: 2rem; /* Padding inside modal */
+  border-radius: 16px; /* Rounded corners */
+  max-width: 600px; /* Maximum width */
+  width: 90%; /* Responsive width */
+  max-height: 90%; /* Maximum height */
+  overflow-y: auto; /* Scroll if content overflows */
+  position: relative; /* Relative positioning */
+  animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
 }
 
 .anime-modal-content img {
-  max-width: 100%;
-  margin-bottom: 1rem;
-  border-radius: 12px;
+  max-width: 100%; /* Maximum width for images */
+  margin-bottom: 1rem; /* Margin below images */
+  border-radius: 12px; /* Rounded corners */
 }
 
 .anime-modal-content h2 {
-  margin-top: 0;
+  margin-top: 0; /* No margin above title */
 }
 
 .anime-desc {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.95rem; /* Font size for description */
+  line-height: 1.6; /* Line height */
 }
 
 .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  background: crimson;
-  border: none;
-  color: white;
-  font-size: 18px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  cursor: pointer;
+  position: absolute; /* Absolute positioning for close button */
+  top: 10px; /* Align to the top */
+  right: 14px; /* Align to the right */
+  background: crimson; /* Background color */
+  border: none; /* No border */
+  color: white; /* Text color */
+  font-size: 18px; /* Font size */
+  padding: 4px 10px; /* Padding for button */
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: scale(0.9); } /* Initial state for fade-in */
+  to { opacity: 1; transform: scale(1); } /* Final state for fade-in */
 }
 
 body.light-theme {
-  background: #f5f5f5;
-  color: #111;
+  background: #f5f5f5; /* Light theme background */
+  color: #111; /* Light theme text color */
 }
 
 body.light-theme .anime-container {
-  background: linear-gradient(to right, #fff, #eaeaea);
+  background: linear-gradient(to right, #fff, #eaeaea); /* Light theme gradient */
 }
 
 body.light-theme .anime-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9); /* Light theme card background */
 }
 
 body.light-theme .anime-overlay {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.85); /* Light theme overlay background */
 }
 
 body.light-theme .filter-bar input,
 body.light-theme .filter-bar select {
-  background: #eee;
-  color: black;
+  background: #eee; /* Light theme input and select background */
+  color: black; /* Light theme text color */
 }
 
 /* ✅ Custom Square Toggle Button CSS */
 .switch {
-  font-size: 11px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 1em;
+  font-size: 11px; /* Font size for toggle */
+  position: relative; /* Relative positioning */
+  display: inline-block; /* Inline block display */
+  width: 3.5em; /* Width of toggle */
+  height: 1em; /* Height of toggle */
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  opacity: 0; /* Hide the default checkbox */
+  width: 0; /* No width */
+  height: 0; /* No height */
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border: 2px solid #000;
-  transition: 0.4s;
-  border-radius: 1px;
+  position: absolute; /* Absolute positioning for slider */
+  cursor: pointer; /* Pointer cursor on hover */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  bottom: 0; /* Align to the bottom */
+  background-color: #ccc; /* Default background color */
+  border: 2px solid #000; /* Border color */
+  transition: 0.4s; /* Transition effect */
+  border-radius: 1px; /* Rounded corners */
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 1.3em;
-  width: 1.2em;
-  border-radius: 2px;
-  left: 0.2em;
-  bottom: 0.3em;
-  background-color: #fff;
-  border: 2px solid #000;
-  transition: 0.1s;
+  position: absolute; /* Absolute positioning for slider knob */
+  content: ""; /* Empty content */
+  height: 1.3em; /* Height of knob */
+  width: 1.2em; /* Width of knob */
+  border-radius: 2px; /* Rounded corners */
+  left: 0.2em; /* Align to the left */
+  bottom: 0.3em; /* Align to the bottom */
+  background-color: #fff; /* Knob background color */
+  border: 2px solid #000; /* Knob border color */
+  transition: 0.1s; /* Transition effect */
 }
 
 input:checked + .slider {
-  background-color: #000;
+  background-color: #000; /* Background color when checked */
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196F3; /* Shadow effect on focus */
 }
 
 input:checked + .slider:before {
-  transform: translateX(1.3em);
+  transform: translateX(1.3em); /* Move knob when checked */
 }
 
 /* 💠 Anime Button Styles */
 
 .btn.favorite-btn {
-  background-color: #8e44ad;
-  color: white;
-  font-weight: 600;
-  border: none;
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  transition: 0.3s ease;
+  background-color: #8e44ad; /* Background color for favorite button */
+  color: white; /* Text color */
+  font-weight: 600; /* Bold font weight */
+  border: none; /* No border */
+  border-radius: 12px; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Padding for button */
+  font-size: 0.9rem; /* Font size */
+  transition: 0.3s ease; /* Transition effect */
 }
 
 .btn.favorite-btn.saved {
-  background-color: crimson;
-  color: white;
+  background-color: crimson; /* Background color for saved state */
+  color: white; /* Text color */
 }
 
 .btn.visit-btn {
-  background-color: #3498db;
-  color: white;
-  font-weight: 600;
-  border: none;
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  transition: 0.3s ease;
+  background-color: #3498db; /* Background color for visit button */
+  color: white; /* Text color */
+  font-weight: 600; /* Bold font weight */
+  border: none; /* No border */
+  border-radius: 12px; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Padding for button */
+  font-size: 0.9rem; /* Font size */
+  transition: 0.3s ease; /* Transition effect */
 }
 
 .btn:hover {
-  opacity: 0.9;
+  opacity: 0.9; /* Slightly transparent on hover */
 }

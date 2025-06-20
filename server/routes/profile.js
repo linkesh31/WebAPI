@@ -4,26 +4,26 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const FavoriteAnime = require('../models/FavoriteAnime');
 const FavoriteGame = require('../models/FavoriteGame');
-const FavoriteTrack = require('../models/FavoriteTrack'); // ✅ ADD THIS
+const FavoriteTrack = require('../models/FavoriteTrack'); // ADD THIS
 const RecentAnime = require('../models/RecentAnime');
 const RecentGame = require('../models/RecentGame');
 const auth = require('../middleware/auth');
 
-// ✅ Get profile info + favorites summary
+// Get profile info + favorites summary
 router.get('/', auth, async (req, res) => {
   try {
     const user = await User.findById(req.userId).select('-password -otp -__v');
 
     const animeCount = await FavoriteAnime.countDocuments({ userId: req.userId });
     const gameCount = await FavoriteGame.countDocuments({ userId: req.userId });
-    const musicCount = await FavoriteTrack.countDocuments({ userId: req.userId }); // ✅ ADD THIS
+    const musicCount = await FavoriteTrack.countDocuments({ userId: req.userId }); // ADD THIS
 
     res.json({
       user,
       favorites: {
         anime: animeCount,
         games: gameCount,
-        music: musicCount // ✅ ADD THIS
+        music: musicCount // ADD THIS
       }
     });
   } catch (err) {
@@ -31,7 +31,7 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
-// ✅ Update profile (username, bio)
+// Update profile (username, bio)
 router.put('/update', auth, async (req, res) => {
   const { username, bio } = req.body;
   try {
@@ -46,7 +46,7 @@ router.put('/update', auth, async (req, res) => {
   }
 });
 
-// ✅ Change password
+// Change password
 router.put('/change-password', auth, async (req, res) => {
   const { currentPassword, newPassword } = req.body;
   try {
@@ -64,12 +64,12 @@ router.put('/change-password', auth, async (req, res) => {
   }
 });
 
-// ✅ Delete account
+// Delete account
 router.delete('/delete', auth, async (req, res) => {
   try {
     await FavoriteAnime.deleteMany({ userId: req.userId });
     await FavoriteGame.deleteMany({ userId: req.userId });
-    await FavoriteTrack.deleteMany({ userId: req.userId }); // ✅ ADD THIS
+    await FavoriteTrack.deleteMany({ userId: req.userId }); // ADD THIS
     await RecentAnime.deleteMany({ userId: req.userId });
     await RecentGame.deleteMany({ userId: req.userId });
     await User.findByIdAndDelete(req.userId);
@@ -80,7 +80,7 @@ router.delete('/delete', auth, async (req, res) => {
   }
 });
 
-// ✅ Activity log (recent viewed)
+// Activity log (recent viewed)
 router.get('/activity-log', auth, async (req, res) => {
   try {
     const recentAnime = await RecentAnime.find({ userId: req.userId }).sort({ createdAt: -1 });

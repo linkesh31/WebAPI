@@ -1,210 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap'); /* Importing Cal Sans font */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body, html {
+  margin: 0; /* Resetting margin */
+  padding: 0; /* Resetting padding */
+  font-family: 'Cal Sans', sans-serif !important; /* Setting font family */
+  letter-spacing: 1px; /* Letter spacing */
+  background-color: var(--bg, #121212); /* Background color with fallback */
+  color: var(--text, white); /* Text color with fallback */
 }
 
-html, body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212;
-  color: #ffffff;
-  height: 100%;
+.dashboard-wrapper {
+  padding: 5rem 2rem 3rem 2rem; /* Padding for the dashboard wrapper */
 }
 
-body.light-theme {
-  background-color: #f5f5f5;
-  color: #111;
-}
-
-/* ================== DASHBOARD LAYOUT ================== */
-
-.dashboard-container {
-  padding-top: 6rem;
-  display: flex;
-  justify-content: center;
-}
-
-body.light-theme .dashboard-container {
-  background-color: #f5f5f5;
-}
-
-.dashboard-content {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  padding: 40px 60px;
-  border-radius: 30px;
-  width: 80%;
-  max-width: 1200px;
-  color: #fff;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-  transform: scale(0.95);
-  animation: popUp 0.8s ease forwards;
-  transition: background-color 0.3s ease;
-}
-
-body.light-theme .dashboard-content {
-  background: rgba(255, 255, 255, 0.85);
-  color: black;
-}
-
-.dashboard-content h1 {
-  font-size: 48px;
-  margin-bottom: 30px;
-  font-weight: 700;
-}
-
-body.light-theme .dashboard-content h1 {
-  color: black;
+.welcome-text {
+  font-size: 2.5rem; /* Font size for welcome text */
+  font-weight: bold; /* Bold font weight */
+  margin-bottom: 2rem; /* Margin below welcome text */
 }
 
 .highlight {
-  color: #00ffc3;
+  color: #00ffc3; /* Highlight color */
 }
 
-body.light-theme .highlight {
-  color: #00bfa6;
+.main-container {
+  display: flex; /* Flexbox layout */
+  gap: 2rem; /* Space between items */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center items */
 }
 
-.stats-container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 40px;
+.dashboard-box {
+  background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+  padding: 1.5rem; /* Padding inside the box */
+  border-radius: 20px; /* Rounded corners */
+  flex: 1; /* Flex-grow */
+  min-width: 300px; /* Minimum width */
+  max-width: 400px; /* Maximum width */
+  backdrop-filter: blur(10px); /* Blur effect for background */
+  box-shadow: 0 0 20px rgba(0,0,0,0.2); /* Shadow effect */
 }
 
 .stat-card {
-  flex: 1;
-  min-width: 200px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s, background-color 0.3s;
+  background-size: cover; /* Cover background */
+  background-position: center; /* Center background */
+  border-radius: 15px; /* Rounded corners */
+  padding: 1rem; /* Padding inside the card */
+  color: white; /* Text color */
+  text-shadow: 1px 1px 5px black; /* Text shadow */
+  position: relative; /* Relative positioning */
+  min-height: 100px; /* Minimum height */
+  margin-bottom: 1rem; /* Margin below card */
 }
 
-body.light-theme .stat-card {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: black;
+.stat-card::before {
+  content: ""; /* Empty content for pseudo-element */
+  position: absolute; /* Absolute positioning */
+  inset: 0; /* Fill the card */
+  background: rgba(0,0,0,0.4); /* Semi-transparent overlay */
+  border-radius: 15px; /* Rounded corners */
 }
 
-.stat-card:hover {
-  transform: scale(1.05);
+.stat-card > * {
+  position: relative; /* Relative positioning for child elements */
+  z-index: 2; /* Above the overlay */
+}
+
+.stat-card h3 {
+  margin: 0; /* No margin */
+  font-size: 1.3rem; /* Font size for heading */
 }
 
 .stat-card h2 {
-  font-size: 36px;
-  margin-bottom: 12px;
-  color: #00ffc3;
+  font-size: 2.5rem; /* Font size for subheading */
+  margin-top: 8px; /* Margin above subheading */
+  color: #00ffc3; /* Color for subheading */
 }
 
-body.light-theme .stat-card h2 {
-  color: #00b386;
+.anime-bg {
+  background-image: url('https://wallpapercave.com/wp/wp13187861.jpg'); /* Background image for anime */
+}
+.games-bg {
+  background-image: url('https://img.freepik.com/premium-photo/animated-character-playing-video-games-tv-screen-ai-generated-illustration_866663-47107.jpg'); /* Background image for games */
+}
+.music-bg {
+  background-image: url('https://m.media-amazon.com/images/I/61CzV9aiTTL.jpg'); /* Background image for music */
 }
 
-.dashboard-content h3 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: white;
+.recent-title {
+  font-size: 1.1rem; /* Font size for recent title */
+  color: var(--muted, #ccc); /* Color for recent title */
+  margin: 12px 0 8px; /* Margin for recent title */
 }
 
-body.light-theme .dashboard-content h3 {
-  color: #222;
+.recent-list {
+  display: flex; /* Flexbox layout for recent list */
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 10px; /* Space between items */
+  margin-top: 1rem; /* Margin above recent list */
 }
 
-.dashboard-content h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  text-align: left;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.recent-chip {
+  background: rgba(0, 0, 0, 0.1); /* Background color for recent chip */
+  padding: 8px 14px; /* Padding for recent chip */
+  border-radius: 12px; /* Rounded corners */
+  font-size: 1rem; /* Font size for recent chip */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: 0.2s; /* Transition effect */
+  color: var(--text, white); /* Text color */
 }
 
-body.light-theme .dashboard-content h4 {
-  color: #333;
+body.light-theme .recent-chip {
+  background: rgba(0, 0, 0, 0.08); /* Light theme background for recent chip */
+  color: #000; /* Light theme text color */
 }
 
-/* ============= RECENTLY VIEWED ============= */
-
-.recently-viewed {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 8px;
+.recent-chip:hover {
+  background-color: #00ffc3; /* Background color on hover */
+  color: black; /* Text color on hover */
 }
 
-.recent-card {
-  padding: 10px 18px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.12);
-  font-weight: 500;
-  transition: transform 0.2s, background-color 0.3s;
-  cursor: pointer;
-  color: white;
+/* Light Mode Fix */
+.light-theme .recent-chip:hover {
+  background-color: #111; /* Contrast color on hover in light theme */
+  color: white; /* Text color on hover in light theme */
 }
 
-body.light-theme .recent-card {
-  background: rgba(0, 0, 0, 0.1);
-  color: black;
+.recent-header {
+  display: flex; /* Flexbox layout for recent header */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
 }
 
-.recent-card:hover {
-  transform: scale(1.05);
-  background-color: #00ffc3;
-  color: #121212;
+.icon-btn {
+  background: none; /* No background */
+  border: none; /* No border */
+  font-size: 1.2rem; /* Font size for icon button */
+  color: #ff4d4d; /* Color for icon button */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
-body.light-theme .recent-card:hover {
-  background-color: #00ffc3;
-  color: black;
-}
-
-/* ============= CLEAR HISTORY BUTTON ============= */
-
-.clear-btn {
-  background-color: transparent;
-  border: 1.5px solid #00ffc3;
-  color: #00ffc3;
-  font-size: 13px;
-  padding: 4px 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-}
-
-.clear-btn:hover {
-  background-color: #00ffc3;
-  color: #121212;
-  transform: scale(1.05);
-}
-
-body.light-theme .clear-btn {
-  color: #00bfa6;
-  border-color: #00bfa6;
-}
-
-body.light-theme .clear-btn:hover {
-  background-color: #00bfa6;
-  color: white;
-}
-
-/* ============= ANIMATION ============= */
-
-@keyframes popUp {
-  0% {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.empty {
+  font-size: 0.95rem; /* Font size for empty state */
+  color: var(--muted, #888); /* Color for empty state */
+  font-style: italic; /* Italic style for empty state */
 }
