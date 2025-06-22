@@ -1,117 +1,126 @@
+
 <p align="center">
-  <img src="https://img.shields.io/badge/MERN%20Stack-Full--Stack-blue?style=flat-square&logo=javascript" alt="MERN Badge"/>
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmptbHMzM3g3ZTVnZG5rYTVubjUwbW9qc2Z6azdjdTJwbjU1YThuaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XgF6hU9XjDBO5wNrU5/giphy.gif" height="140" alt="SenpaiStats Banner"/>
 </p>
 
 <h1 align="center">💠 SenpaiStats</h1>
-<p align="center"><i>A visually polished full-stack Web Application for Anime, Games, and Music enthusiasts</i></p>
+<p align="center"><strong>A dynamic MERN-based web app for Anime 🎴, Games 🎮, and Music 🎵 fans.</strong></p>
+<p align="center">
+  <img src="https://img.shields.io/badge/MERN%20Stack-Full--Stack-blue?style=flat-square&logo=javascript" />
+  <img src="https://img.shields.io/badge/API%20Integration-Jikan%2FRAWG%2FDeezer-green?style=flat-square&logo=api" />
+  <img src="https://img.shields.io/badge/OTP%20Auth-Enabled-orange?style=flat-square&logo=gmail" />
+</p>
 
 ---
 
-## 🎯 About the Project
+## 🧩 What is SenpaiStats?
 
-**SenpaiStats** is a full-stack web application built with the **MERN stack**. It allows users to explore trending anime, games, and music with rich UI elements and API integrations. Featuring secure OTP-based authentication, user profile customization, and light/dark themes — SenpaiStats delivers a personalized content experience.
+**SenpaiStats** is a visually rich, full-stack web application that offers users the ability to explore anime, games, and music from top-tier APIs. The platform combines a sleek UI with real-time features, OTP-based email authentication, and user personalization.
 
 ---
 
-## 🧩 Features
+## ✨ Features
 
-### 🔐 Authentication
-- Signup with OTP Email Verification
-- JWT-secured Login & Logout
-- Password Reset Flow
-- Profile Management & Theme Toggle
+### 🔐 User Authentication
+- OTP Email Verification
+- JWT-secured Login
+- Forgot & Reset Password Flow
+- Profile Edit / Delete Account
 
-### 📺 Anime
-- Explore anime via Jikan API
-- Search, filter, view details, and favorite titles
-- Hover-based card overlays and modals
+### 🎴 Anime Section
+- Browse anime via **Jikan API**
+- Search, genre filter, synopsis modal
+- Add/remove favorites
 
-### 🎮 Games
-- RAWG-powered data for games
-- Genre/platform/year filters
-- Hero game section with dynamic CTA buttons
+### 🎮 Games Section
+- Fetches data from **RAWG API**
+- Filters by platform, genre, and release year
+- Hero banner & glassmorphic cards
 
-### 🎵 Music
-- Music tracks via Deezer API
-- Sort by Newest, A–Z, Z–A
-- Audio preview and favoriting options
+### 🎵 Music Section
+- Powered by **Deezer API**
+- Search, sort (A–Z, Z–A, Newest)
+- Audio preview & favorite system
 
 ### 👤 Profile
-- Edit personal details
-- Change password or delete account
-- Upload/change profile image
-- Initial-based avatar fallback
+- Upload/change profile photo
+- Theme toggle (light/dark)
+- Initial-based fallback avatar
 
 ### 📊 Dashboard
-- Stat overview with themed cards
-- Recent activity viewer
-- Clear history buttons with confirmation
+- Stat cards for Anime/Games/Music
+- Recent activity list
+- Animated UI with trash clear button
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-| Layer        | Tools                                               |
-|--------------|-----------------------------------------------------|
-| Frontend     | React, Axios, React Router, SweetAlert2             |
-| Backend      | Node.js, Express.js, MongoDB, Mongoose              |
-| Authentication | JWT, Bcrypt.js, Nodemailer (OTP email system)     |
-| APIs Used    | Jikan (Anime), RAWG (Games), Deezer (Music)         |
-| UI/UX        | Glassmorphism, Responsive Layout, Light/Dark Modes  |
+| Layer        | Tools Used                                    |
+|--------------|-----------------------------------------------|
+| Frontend     | React.js, Axios, React Router, SweetAlert2    |
+| Backend      | Node.js, Express.js, MongoDB, Mongoose        |
+| Auth System  | JWT, Bcrypt, Nodemailer (OTP system)          |
+| APIs         | Jikan (Anime), RAWG (Games), Deezer (Music)   |
+| UI Styling   | CSS, Responsive Layout, Glassmorphism         |
 
 ---
 
-## 📁 Project Structure
+## 📂 Folder Structure
 
 ```
 WebAPI/
 ├── client/
 │   ├── src/
-│   │   ├── views/       # Pages (Login, Signup, AnimePage, etc.)
-│   │   ├── components/  # UI Components (Cards, Forms, Filters)
-│   │   ├── assets/      # Images and icons
-│   │   └── styles/      # CSS files
-│
+│   │   ├── views/        # Pages (AnimePage, Login, OTP, Profile)
+│   │   ├── components/   # Cards, Forms, Search Bar
+│   │   └── assets/       # Icons, Backgrounds
 ├── server/
-│   ├── routes/          # API endpoints
-│   ├── models/          # Mongoose models
-│   ├── utils/           # OTP generator, Mailer
-│   ├── middleware/      # JWT Verification
-│   └── server.js        # Entry point
+│   ├── routes/           # Auth, Anime, Music, Game APIs
+│   ├── models/           # Mongoose schemas
+│   ├── utils/            # OTP Generator, Mailer
+│   └── server.js         # Entry point
 ```
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 Getting Started
 
-### 1. Clone the Repository
+### 🔧 Prerequisites
+- Node.js
+- MongoDB (Atlas or local)
+- Git
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/linkesh31/WebAPI.git
 cd WebAPI
 ```
 
-### 2. Setup Backend
+### 2️⃣ Setup Backend
 
 ```bash
 cd server
 npm install
 ```
 
-Create a `.env` file:
+Create `.env` inside `server` folder:
+
 ```env
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_jwt_secret
 EMAIL_USER=youremail@example.com
 EMAIL_PASS=yourpassword
 ```
 
-Run server:
+Start the backend:
+
 ```bash
 node server.js
 ```
 
-### 3. Setup Frontend
+### 3️⃣ Setup Frontend
 
 ```bash
 cd ../client
@@ -119,34 +128,44 @@ npm install
 npm start
 ```
 
-Visit: [http://localhost:3000](http://localhost:3000)
-
 ---
 
-## 📸 Screenshots
 
-> Add your own screenshots here later for:
-- Dashboard
-- Anime Page
-- Music Search
-- Game Hero Section
-- Profile Page
+### 🔐 Login Page  
+![Login](https://via.placeholder.com/800x400.png?text=Login+Page)
+
+### 🎴 Anime Page  
+![Anime](https://via.placeholder.com/800x400.png?text=Anime+Page)
+
+### 🎮 Games Page  
+![Games](https://via.placeholder.com/800x400.png?text=Games+Page)
+
+### 🎵 Music Page  
+![Music](https://via.placeholder.com/800x400.png?text=Music+Page)
+
+### 📊 Dashboard  
+![Dashboard](https://via.placeholder.com/800x400.png?text=Dashboard)
 
 ---
 
 ## 👥 Team Members
 
-| Name                               | Role                                      |
-|------------------------------------|-------------------------------------------|
-| Linkesh A/L Jaya Prakash Rao       | Frontend Development, UI/UX Design        |
-| Harvind Nair A/L Selvam            | Backend Development, Auth & API Logic     |
-| Kishen Kumaar A/L Ganesh Raja      | Integration, Testing, and Documentation   |
+| 👨‍💻 Name                             | Role                                 |
+|--------------------------------------|--------------------------------------|
+| Linkesh A/L Jaya Prakash Rao         | Backend Development & API Integration|
+| Harvind Nair A/L Selvam              | Frontend Development, UI/UX Design   |
+| Kishen Kumaar A/L Ganesh Raja        | System Integration & Testing         |
 
 ---
 
 ## 📘 License
 
-Project submitted for **6003CEM Web API Coursework**  
+**6003CEM Web API Coursework Submission**  
 © 2025 SenpaiStats Team – All Rights Reserved.
 
 ---
+
+<p align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3phcWFkZ3VvZWJxN2k5aHphd3Z2aXZsM2E1aWNwN2FvZ2s3aTdzZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bGgsc5mWoryfgKBx1u/giphy.gif" height="80" alt="Thanks for reading"/>
+</p>
+<p align="center"><i>Thanks for visiting! Drop a ⭐ on the repo if you liked the project.</i></p>
