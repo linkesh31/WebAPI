@@ -1,8 +1,4 @@
 
-<p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmptbHMzM3g3ZTVnZG5rYTVubjUwbW9qc2Z6azdjdTJwbjU1YThuaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XgF6hU9XjDBO5wNrU5/giphy.gif" height="140" alt="SenpaiStats Banner"/>
-</p>
-
 <h1 align="center">💠 SenpaiStats</h1>
 <p align="center"><strong>A dynamic MERN-based web app for Anime 🎴, Games 🎮, and Music 🎵 fans.</strong></p>
 <p align="center">
