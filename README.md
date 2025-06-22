@@ -126,24 +126,6 @@ npm start
 
 ---
 
-
-### 🔐 Login Page  
-![Login](https://via.placeholder.com/800x400.png?text=Login+Page)
-
-### 🎴 Anime Page  
-![Anime](https://via.placeholder.com/800x400.png?text=Anime+Page)
-
-### 🎮 Games Page  
-![Games](https://via.placeholder.com/800x400.png?text=Games+Page)
-
-### 🎵 Music Page  
-![Music](https://via.placeholder.com/800x400.png?text=Music+Page)
-
-### 📊 Dashboard  
-![Dashboard](https://via.placeholder.com/800x400.png?text=Dashboard)
-
----
-
 ## 👥 Team Members
 
 | 👨‍💻 Name                             | Role                                 |
